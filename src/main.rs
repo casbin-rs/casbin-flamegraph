@@ -340,9 +340,7 @@ fn b_benchmark_cached_priority_model() {
     await_future(e.enforce(&["alice", "data1", "read"])).unwrap();
 }
 
-#[cfg_attr(feature = "runtime-async-std", async_std::main)]
-#[cfg_attr(feature = "runtime-tokio", tokio::main)]
-async fn main() -> Result<()> {
+fn main() -> Result<()> {
     let mut hash_map: HashMap<&str, fn()> = HashMap::new();
     hash_map.insert("b_benchmark_raw", b_benchmark_raw);
     hash_map.insert("b_benchmark_basic_model", b_benchmark_basic_model);
