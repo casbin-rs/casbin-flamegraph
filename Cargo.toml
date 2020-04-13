@@ -1,0 +1,20 @@
+[package]
+name = "casbin-flamegraph"
+version = "0.1.0"
+authors = ["Cheng JIANG <jiang.cheng@vip.163.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+casbin = { git = "https://github.com/casbin/casbin-rs", optional = true, default-features = false }
+async-std = { version = "1.5.0", optional = true, default-features = false }
+tokio = { version = "0.2.11", optional = true, default-features = false }
+
+
+[features]
+default = ["runtime-tokio"]
+
+runtime-tokio = ["casbin/runtime-tokio", "tokio/fs", "tokio/io-util", "tokio/stream", "tokio/rt-threaded", "tokio/blocking", "tokio/macros"]
+runtime-async-std = ["casbin/runtime-async-std", "async-std/default", "async-std/attributes"]
+
