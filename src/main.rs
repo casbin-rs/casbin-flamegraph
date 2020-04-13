@@ -513,6 +513,7 @@ fn main() -> Result<()> {
         b_benchmark_rbac_model_medium
         b_benchmark_cached_rbac_model_medium
         b_benchmark_rbac_model_large
+        b_benchmark_cached_rbac_model_large
         b_benchmark_rbac_with_resource_roles
         b_benchmark_cached_rbac_with_resource_roles
         b_benchmark_rbac_model_with_domains
